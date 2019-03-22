@@ -1,4 +1,4 @@
-class ActionController < ActionController::Base
+class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   include SessionsHelper
@@ -9,5 +9,9 @@ class ActionController < ActionController::Base
     unless logged_in?
       redirect_to login_url
     end
+  end
+  
+  def counts(user)
+    @count_microposts = user.microposts.count
   end
 end
