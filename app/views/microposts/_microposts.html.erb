@@ -13,8 +13,9 @@
                     <p><%= micropost.content %></p>
                 </div>
                 <div>
-                    <% if cirrent_user == micropost.user %>
+                    <% if current_user == micropost.user %>
                         <%= link_to 'Delate', micropost, method: :delete, data: { confirm: 'You sure?' }, dlass: 'btn btn-danger btn-xs' %>
+                        <%= render 'likes/likes_button', micropost: micropost %>
                     <% end %>
                 </div>
             </div>

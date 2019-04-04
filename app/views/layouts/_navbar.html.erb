@@ -13,11 +13,14 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
+            <!-- TODO: link_toで自分がお気に入りした投稿の一覧のページに飛べるようにする-->
+            <!-- likes_user_path がお気に入り一覧のリンク -->
+            <li><%=link_to 'Likes',likes_user_path(current_user) %></li>
             <li><%= link_to 'Users', users_path %></li>
             <li class='dropdown'>
               <a herf='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' ariapexpanded='false'><%= current_user.name %><span class='caret'></span></a>
               <ul class='dropdown-menu'>
-                <li><%= link_to 'My progile', user_path(current_user) %></li>
+                <li><%= link_to 'My profile', user_path(current_user) %></li>
                 <li role='separator' class='divider'></li>
                 <li>Logout</li>
               </ul>
