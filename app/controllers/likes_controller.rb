@@ -9,7 +9,7 @@ class LikesController < ApplicationController
 
   def destroy
     micropost = Micropost.find(params[:micropost_id])
-    current_user.like(micropost)
+    current_user.unlike(micropost)
     flash[:succes] = ' Micropost のお気に入りを解除しました。'
     redirect_back(fallback_location: root_url)
   end
