@@ -14,6 +14,7 @@
                     </div>
                 </div>
             </li>
+            <li><%= link_to 'Logout', logout_path, method: :delete %></li>
         <% end %>
     </ul>
     <%= paginate users %>

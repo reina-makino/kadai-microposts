@@ -1,9 +1,9 @@
 <% if logged_in? %>
     <div class='row'>
-        <aside class='vol-md-4'>
+        <aside class='col-md-4'>
             <%= form_for(@micropost) do |f| %>
-                <div class='fourm-group'>
-                    <%= f.text_area :content, class: 'form-control', row: 5 %>
+                <div class='form-group'>
+                    <textarea rows="5" class="form-control" name="micropost[content]" id="micropost_content"></textarea>
                 </div>
                 <%= f.submit 'post', class: 'btn btn-primary btn-block' %>
             <% end %>
